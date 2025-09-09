@@ -1,0 +1,100 @@
+.table-container {
+  margin-top: 2rem;
+  overflow-x: auto;
+  padding: 0.5rem;
+}
+
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.5rem;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+}
+
+.responsive-table th,
+.responsive-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  text-align: left;
+}
+
+.responsive-table th {
+  background-color: #f4f6f4;
+  color: #333;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.responsive-table td {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.reward-badge {
+  color: white;
+  padding: 5px 12px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.send-btn {
+  background: #556b2f; /* Olive green */
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.send-btn:hover {
+  background: #445822;
+}
+
+@media screen and (max-width: 768px) {
+  .responsive-table thead {
+    display: none;
+  }
+
+  .responsive-table tr {
+    display: block;
+    margin-bottom: 1.2rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background: #fafafa;
+    overflow: hidden;
+  }
+
+  .responsive-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+  }
+
+  .responsive-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #2e402c;
+    flex: 1;
+  }
+
+  .responsive-table td:last-child {
+    border-bottom: none;
+  }
+}

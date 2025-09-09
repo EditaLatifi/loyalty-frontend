@@ -1,0 +1,77 @@
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.stat-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.8rem 1.2rem;
+  text-align: center;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+  border-left: 6px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+}
+
+.stat-box h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #2e402c;
+  margin-bottom: 0.4rem;
+}
+
+.stat-box p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.total {
+  border-left: 6px solid #2e402c;
+}
+
+.stamps {
+  border-left: 6px solid #4caf50;
+}
+
+.payback {
+  border-left: 6px solid #2196f3;
+}
+
+.onetime {
+  border-left: 6px solid #ff9800;
+}
+
+/* Optional: Add slight gradient to make it pop more */
+.total:hover {
+  background: linear-gradient(135deg, #e9f0e2, #ffffff);
+}
+
+.stamps:hover {
+  background: linear-gradient(135deg, #e8f9ee, #ffffff);
+}
+
+.payback:hover {
+  background: linear-gradient(135deg, #e6f2fd, #ffffff);
+}
+
+.onetime:hover {
+  background: linear-gradient(135deg, #fff4e5, #ffffff);
+}
+
+@media (max-width: 500px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
