@@ -1,0 +1,266 @@
+{
+  "restaurant": {
+    "name": "Bella Vista Restaurant",
+    "tagline": "Authentic Italian Cuisine",
+    "logo": "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
+    "colors": {
+      "primary": "#8B4513",
+      "secondary": "#D2691E",
+      "accent": "#FFD700",
+      "background": "#FFF8DC"
+    },
+    "contact": {
+      "phone": "+1 (555) 123-4567",
+      "email": "info@bellavista.com",
+      "website": "www.bellavista.com",
+      "address": {
+        "street": "123 Culinary Street",
+        "city": "Foodie Town",
+        "state": "CA",
+        "zip": "90210"
+      }
+    }
+  },
+  "loyaltyProgram": {
+    "name": "Bella Rewards",
+    "description": "Earn points with every visit and unlock delicious rewards!",
+    "currency": "Bella Points",
+    "programs": {
+      "stamps": {
+        "name": "Visit Stamps",
+        "description": "Collect stamps for each visit",
+        "maxStamps": 10,
+        "rewards": [
+          {
+            "stampsRequired": 5,
+            "reward": "Free Appetizer",
+            "description": "Choose any appetizer from our menu",
+            "icon": "🥗"
+          },
+          {
+            "stampsRequired": 10,
+            "reward": "Free Main Course",
+            "description": "Complimentary pasta or pizza of your choice",
+            "icon": "🍝"
+          }
+        ]
+      },
+      "payback": {
+        "name": "Points Rewards",
+        "description": "Earn points and redeem for discounts",
+        "pointsPerDollar": 1,
+        "bonusMultipliers": {
+          "happyHour": 2,
+          "weekends": 1.5,
+          "specialEvents": 3
+        },
+        "rewards": [
+          {
+            "pointsRequired": 100,
+            "reward": "$5 Off",
+            "description": "Save $5 on your next order",
+            "icon": "💰"
+          },
+          {
+            "pointsRequired": 250,
+            "reward": "$15 Off",
+            "description": "Save $15 on orders over $50",
+            "icon": "💸"
+          },
+          {
+            "pointsRequired": 500,
+            "reward": "Free Dessert & Coffee",
+            "description": "Complimentary tiramisu and espresso",
+            "icon": "🍰"
+          },
+          {
+            "pointsRequired": 1000,
+            "reward": "Chef's Special Dinner",
+            "description": "3-course meal for two people",
+            "icon": "👨‍🍳"
+          }
+        ]
+      },
+      "onetime": {
+        "name": "Welcome Gift",
+        "description": "Special one-time offers for new customers",
+        "rewards": [
+          {
+            "reward": "20% Off First Visit",
+            "description": "Welcome to Bella Vista! Enjoy 20% off your first meal",
+            "icon": "🎉",
+            "validDays": 30
+          },
+          {
+            "reward": "Free Bruschetta",
+            "description": "Complimentary bruschetta appetizer",
+            "icon": "🍞",
+            "validDays": 14
+          }
+        ]
+      }
+    }
+  },
+  "cardDesign": {
+    "template": "restaurant",
+    "backgroundImage": "https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop",
+    "layout": {
+      "front": {
+        "elements": [
+          {
+            "type": "logo",
+            "position": { "x": 20, "y": 20 },
+            "size": { "width": 60, "height": 60 }
+          },
+          {
+            "type": "restaurantName",
+            "position": { "x": 90, "y": 30 },
+            "fontSize": 18,
+            "fontWeight": "bold",
+            "color": "#8B4513"
+          },
+          {
+            "type": "tagline",
+            "position": { "x": 90, "y": 50 },
+            "fontSize": 12,
+            "color": "#D2691E"
+          },
+          {
+            "type": "customerName",
+            "position": { "x": 20, "y": 100 },
+            "fontSize": 16,
+            "fontWeight": "bold"
+          },
+          {
+            "type": "memberSince",
+            "position": { "x": 20, "y": 120 },
+            "fontSize": 10,
+            "color": "#666"
+          },
+          {
+            "type": "qrCode",
+            "position": { "x": 280, "y": 80 },
+            "size": { "width": 80, "height": 80 }
+          }
+        ]
+      },
+      "back": {
+        "elements": [
+          {
+            "type": "rewardProgress",
+            "position": { "x": 20, "y": 20 },
+            "size": { "width": 320, "height": 60 }
+          },
+          {
+            "type": "specialOffers",
+            "position": { "x": 20, "y": 90 },
+            "size": { "width": 320, "height": 80 }
+          },
+          {
+            "type": "contactInfo",
+            "position": { "x": 20, "y": 180 },
+            "fontSize": 10
+          }
+        ]
+      }
+    }
+  },
+  "specialOffers": {
+    "current": [
+      {
+        "title": "Happy Hour Special",
+        "description": "50% off appetizers & drinks",
+        "time": "Monday-Friday 3-6 PM",
+        "icon": "🍻",
+        "validUntil": "2024-12-31"
+      },
+      {
+        "title": "Weekend Brunch",
+        "description": "Unlimited mimosas with brunch",
+        "time": "Saturday-Sunday 10 AM-2 PM",
+        "icon": "🥂",
+        "validUntil": "2024-12-31"
+      },
+      {
+        "title": "Family Night",
+        "description": "Kids eat free with adult entrée",
+        "time": "Tuesdays after 5 PM",
+        "icon": "👨‍👩‍👧‍👦",
+        "validUntil": "2024-12-31"
+      }
+    ]
+  },
+  "notifications": {
+    "templates": {
+      "welcome": {
+        "title": "Welcome to Bella Vista! 🍝",
+        "message": "Thanks for joining our loyalty program. Your first reward is waiting!",
+        "action": "View Rewards"
+      },
+      "rewardEarned": {
+        "title": "Congratulations! 🎉",
+        "message": "You've earned a new reward: {rewardName}",
+        "action": "Redeem Now"
+      },
+      "specialOffer": {
+        "title": "Special Offer Just for You! ✨",
+        "message": "{offerDescription}",
+        "action": "Book Table"
+      },
+      "pointsReminder": {
+        "title": "You're Close to a Reward! 🏆",
+        "message": "Only {pointsNeeded} more points until your next reward",
+        "action": "Visit Us"
+      }
+    }
+  },
+  "analytics": {
+    "trackingEvents": [
+      "card_generated",
+      "card_scanned",
+      "reward_redeemed",
+      "points_earned",
+      "visit_recorded",
+      "offer_viewed",
+      "notification_opened"
+    ],
+    "customerSegments": [
+      "new_customer",
+      "regular_customer",
+      "vip_customer",
+      "inactive_customer"
+    ]
+  },
+  "integrations": {
+    "pos": {
+      "enabled": true,
+      "provider": "square",
+      "autoPointsCalculation": true
+    },
+    "reservations": {
+      "enabled": true,
+      "provider": "opentable",
+      "bonusPoints": 25
+    },
+    "delivery": {
+      "enabled": true,
+      "providers": ["ubereats", "doordash"],
+      "pointsMultiplier": 0.5
+    }
+  },
+  "businessRules": {
+    "pointExpiration": {
+      "enabled": true,
+      "months": 12,
+      "warningDays": 30
+    },
+    "maximumPointsPerVisit": 500,
+    "minimumSpendForPoints": 10,
+    "doublePointsDays": ["tuesday", "wednesday"],
+    "birthdayBonus": {
+      "enabled": true,
+      "points": 100,
+      "validDays": 7
+    }
+  }
+}
