@@ -21,7 +21,7 @@ const business_id = localStorage.getItem('business_id');
 
     try {
       const res = await axios.post(
-        'http://localhost:5000/api/customers/add',
+        'https://loyalty-backend-mu.vercel.app/api/customers/add',
         { name, email, reward_type: rewardType, business_id },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -30,7 +30,7 @@ const business_id = localStorage.getItem('business_id');
       setQrCode(res.data.qrCode);
 
       const walletRes = await axios.get(
-        `http://localhost:5000/api/wallet/generate-link/${customer.id}`
+        `https://loyalty-backend-mu.vercel.app/api/wallet/generate-link/${customer.id}`
       );
       setSaveUrl(walletRes.data.saveUrl);
     } catch {

@@ -18,7 +18,7 @@ function ScanQR() {
 
         // send scan to backend using your scan-wallet route
         const res = await axios.post(
-          "http://localhost:5000/api/scan/scan-wallet",
+          "https://loyalty-backend-mu.vercel.app/api/scan/scan-wallet",
           { serial: result.text, business_id },
           { headers: { Authorization: `Bearer ${token}` } }
         );

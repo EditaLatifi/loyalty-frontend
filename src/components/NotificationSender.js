@@ -7,7 +7,7 @@ function NotificationSender() {
   const sendToAll = async () => {
     if (!message.trim()) return;
     try {
-      await axios.post('http://localhost:5000/api/notifications/broadcast', { message });
+      await axios.post('https://loyalty-backend-mu.vercel.app/api/notifications/broadcast', { message });
       alert('Notification sent to all customers!');
       setMessage('');
     } catch (err) {

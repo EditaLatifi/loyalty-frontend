@@ -14,7 +14,7 @@ function AdminDashboard() {
   }, []);
 
   const fetchBusinesses = async () => {
-    const res = await axios.get('http://localhost:5000/api/admin/businesses');
+    const res = await axios.get('https://loyalty-backend-mu.vercel.app/api/admin/businesses');
     setBusinesses(res.data);
   };
 
@@ -24,7 +24,7 @@ function AdminDashboard() {
     if (!plan_id) return alert('Select valid package');
 
     try {
-      await axios.post('http://localhost:5000/api/admin/businesses', {
+      await axios.post('https://loyalty-backend-mu.vercel.app/api/admin/businesses', {
         name: newBiz.name,
         email: newBiz.email,
         password: newBiz.password,
@@ -40,13 +40,13 @@ function AdminDashboard() {
 
   const deleteBusiness = async (id) => {
     if (!window.confirm('Are you sure?')) return;
-    await axios.delete(`http://localhost:5000/api/admin/businesses/${id}`);
+    await axios.delete(`https://loyalty-backend-mu.vercel.app/api/admin/businesses/${id}`);
     setBusinesses(businesses.filter(b => b.id !== id));
   };
 
   const sendCampaign = async () => {
     if (!selectedBusiness || !campaignMsg) return alert('Select business and write message');
-    await axios.post('http://localhost:5000/api/admin/campaign', {
+    await axios.post('https://loyalty-backend-mu.vercel.app/api/admin/campaign', {
       business_id: selectedBusiness,
       message: campaignMsg
     });

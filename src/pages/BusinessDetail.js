@@ -21,7 +21,7 @@ function BusinessDetail() {
 
   const fetchBusiness = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/admin/businesses/${id}`);
+      const res = await axios.get(`https://loyalty-backend-mu.vercel.app/api/admin/businesses/${id}`);
       setBusiness(res.data);
     } catch (err) {
       console.error('Failed to fetch business', err);
@@ -31,7 +31,7 @@ function BusinessDetail() {
   const sendTemplate = async () => {
     if (!templateKey) return alert('Select a template first');
     try {
-      await axios.post('http://localhost:5000/api/admin/template/send', {
+      await axios.post('https://loyalty-backend-mu.vercel.app/api/admin/template/send', {
         business_id: id,
         template_key: templateKey,
       });
@@ -45,7 +45,7 @@ function BusinessDetail() {
   const sendCampaign = async () => {
     if (!campaignMsg.trim()) return alert('Message required');
     try {
-      await axios.post('http://localhost:5000/api/admin/campaign', {
+      await axios.post('https://loyalty-backend-mu.vercel.app/api/admin/campaign', {
         business_id: business.id,
         message: campaignMsg
       });

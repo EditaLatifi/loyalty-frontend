@@ -7,7 +7,7 @@ import './CustomerTable.css';
 function CustomerTable({ customers }) {
   const handleSend = async (id) => {
     try {
-      await axios.post('http://localhost:5000/api/notifications/send', {
+      await axios.post('https://loyalty-backend-mu.vercel.app/api/notifications/send', {
         customer_id: id
       });
       alert('✅ Notification sent!');

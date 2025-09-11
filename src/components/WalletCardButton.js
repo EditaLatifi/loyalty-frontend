@@ -9,7 +9,7 @@ function WalletCardButton({ customerId }) {
     setLoading(true);
     try {
       const res = await axios.get(
-        `http://localhost:5000/apple-wallet/generate/${customerId}`,
+        `https://loyalty-backend-mu.vercel.app/apple-wallet/generate/${customerId}`,
         { responseType: "blob" }
       );
 
@@ -29,7 +29,7 @@ function WalletCardButton({ customerId }) {
     setLoading(true);
     try {
       const res = await axios.get(
-        `http://localhost:5000/google-wallet/generate-link/${customerId}`
+        `https://loyalty-backend-mu.vercel.app/google-wallet/generate-link/${customerId}`
       );
       setGoogleUrl(res.data.saveUrl);
       window.open(res.data.saveUrl, "_blank");

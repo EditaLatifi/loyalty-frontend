@@ -18,7 +18,7 @@ useEffect(() => {
 
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/customers?business_id=${business_id}`, // 👈 pass it
+        `https://loyalty-backend-mu.vercel.app/api/customers?business_id=${business_id}`, // 👈 pass it
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setCustomers(res.data);
