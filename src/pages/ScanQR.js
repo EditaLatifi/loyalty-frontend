@@ -5,18 +5,30 @@ import axios from "axios";
 function ScanQR() {
   const [scanResult, setScanResult] = useState("");
   const [reward, setReward] = useState(null);
+  const [points, setPoints] = useState(null);
+  const [message, setMessage] = useState("");
 
   const handleScan = async (result) => {
     if (result && result.text && result.text !== scanResult) {
       setScanResult(result.text);
+
       try {
-        const parsed = JSON.parse(result.text); // expects { id: ..., reward_type: ... }
-        const res = await axios.post("http://localhost:5000/api/customers/scan", {
-          customer_id: parsed.id,
-        });
+        const token = localStorage.getItem("token");
+        const business_id = localStorage.getItem("business_id");
+
+        // send scan to backend using your scan-wallet route
+        const res = await axios.post(
+          "http://localhost:5000/api/scan/scan-wallet",
+          { serial: result.text, business_id },
+          { headers: { Authorization: `Bearer ${token}` } }
+        );
+
+        setMessage(res.data.message);
+        setPoints(res.data.points);
         setReward(res.data.reward);
       } catch (err) {
-        alert("Invalid QR or scan failed.");
+        console.error(err);
+        alert("❌ Scan failed or invalid QR code.");
       }
     }
   };
@@ -27,17 +39,18 @@ function ScanQR() {
 
   return (
     <div>
-      <h2>Scan QR Code</h2>
+      <h2>📷 Scan Customer Wallet</h2>
       <QrScanner
         delay={500}
         onError={handleError}
         onScan={handleScan}
-        style={{ width: "300px" }}
+        style={{ width: "320px" }}
       />
-      <p>Scan Result: {scanResult}</p>
-      {reward && (
-        <p style={{ color: "green", fontWeight: "bold" }}>{reward}</p>
-      )}
+
+      {scanResult && <p><b>Serial:</b> {scanResult}</p>}
+      {message && <p><b>{message}</b></p>}
+      {points !== null && <p>⭐ Points: {points}</p>}
+      {reward && <p style={{ color: "green", fontWeight: "bold" }}>🎉 {reward}</p>}
     </div>
   );
 }
